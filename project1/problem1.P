@@ -1,0 +1,182 @@
+% Project One Prolog file
+
+male(spencer).
+male(eugenie).
+male(george).
+male(philip).
+male(charles).
+male(mark).
+male(andrew).
+male(edward).
+male(william).
+male(harry).
+male(peter).
+female(kydd).
+female(beatrice).
+female(zara).
+female(mum).
+female(elizabeth).
+female(margaret).
+female(diana).
+female(anne).
+female(sarah).
+daughter(elizabeth, george).
+daughter(elizabeth, mum).
+daughter(margaret, george).
+daughter(margaret, mum).
+daughter(diana, spencer).
+daughter(diana, kydd).
+daughter(anne, elizabeth).
+daughter(anne, philip).
+daughter(zara, anne).
+daughter(zara, mark).
+daughter(beatrice, andrew).
+daughter(beatrice, sarah).
+son(charles, elizabeth).
+son(charles, philip).
+son(andrew, elizabeth).
+son(andrew, philip).
+son(edward, elizabeth).
+son(edward, philip).
+son(william, diana).
+son(william, charles).
+son(harry, diana).
+son(harry, charles).
+son(peter, anne).
+son(peter, mark).
+son(eugenie, andrew).
+son(eugenie, sarah).
+sister(elizabeth, margaret).
+sister(margaret, elizabeth).
+sister(anne, charles).
+sister(anne, andrew).
+sister(anne, edward).
+sister(zara, peter).
+sister(beatrice, eugenie).
+brother(charles, anne).
+brother(charles, andrew).
+brother(charles, edward).
+brother(andrew, charles).
+brother(andrew, anne).
+brother(andrew, edward).
+brother(edward, charles).
+brother(edward, anne).
+brother(edward, andrew).
+brother(william, harry).
+brother(harry, william).
+brother(peter, zara).
+brother(eugenie, beatrice).
+grandChild(charles, george).
+grandChild(charles, mum).
+grandChild(anne, george).
+grandChild(anne, mum).
+grandChild(andrew, george).
+grandChild(andrew, mum).
+grandChild(edward, george).
+grandChild(edward, mum).
+grandChild(william, spencer).
+grandChild(william, kydd).
+grandChild(harry, spencer).
+grandChild(harry, kydd).
+grandChild(william, elizabeth).
+grandChild(william, philip).
+grandChild(harry, elizabeth).
+grandChild(harry, philip).
+grandChild(peter, elizabeth).
+grandChild(peter, philip).
+grandChild(zara, elizabeth).
+grandChild(zara, philip).
+grandChild(beatrice, elizabeth).
+grandChild(beatrice, philip).
+grandChild(eugenie, elizabeth).
+grandChild(eugenie, philip).
+greatGrandparent(george, william).
+greatGrandparent(george, harry).
+greatGrandparent(george, peter).
+greatGrandparent(george, zara).
+greatGrandparent(george, beatrice).
+greatGrandparent(george, eugenie).
+greatGrandparent(mum, william).
+greatGrandparent(mum, harry).
+greatGrandparent(mum, peter).
+greatGrandparent(mum, zara).
+greatGrandparent(mum, beatrice).
+greatGrandparent(mum, eugenie).
+aunt(margaret, charles).
+aunt(margaret, anne).
+aunt(margaret, andrew).
+aunt(margaret, edward).
+aunt(anne, william).
+aunt(anne, harry).
+aunt(anne, beatrice).
+aunt(anne, eugenie).
+aunt(diana, peter).
+aunt(diana, zara).
+aunt(diana, beatrice).
+aunt(diana, eugenie).
+aunt(sarah, william).
+aunt(sarah, harry).
+aunt(sarah, peter).
+aunt(sarah, zara).
+uncle(andrew, william).
+uncle(andrew, harry).
+uncle(edward, william).
+uncle(edward, harry).
+uncle(mark, william).
+uncle(mark, harry).
+uncle(charles, peter).
+uncle(charles, zara).
+uncle(andrew, peter).
+uncle(andrew, zara).
+uncle(edward, peter).
+uncle(edward, zara).
+uncle(charles, beatrice).
+uncle(charles, eugenie).
+uncle(edward, beatrice).
+uncle(edward, eugenie).
+uncle(mark, beatrice).
+uncle(mark, eugenie).
+firstCousin(peter, william).
+firstCousin(zara, william).
+firstCousin(beatrice, william).
+firstCousin(eugenie, william).
+firstCousin(peter, harry).
+firstCousin(zara, harry).
+firstCousin(beatrice, harry).
+firstCousin(eugenie, harry).
+firstCousin(william, peter).
+firstCousin(harry, peter).
+firstCousin(beatrice, peter).
+firstCousin(eugenie, peter).
+firstCousin(william, zara).
+firstCousin(harry, zara).
+firstCousin(beatrice, zara).
+firstCousin(eugenie, zara).
+firstCousin(william, beatrice).
+firstCousin(harry, beatrice).
+firstCousin(peter, beatrice).
+firstCousin(zara, beatrice).
+firstCousin(william, eugenie).
+firstCousin(harry, eugenie).
+firstCousin(peter, eugenie).
+firstCousin(zara, eugenie).
+sisterInLaw(sarah, charles).
+sisterInLaw(sarah, anne).
+sisterInLaw(sarah, edward).
+sisterInLaw(diana, anne).
+sisterInLaw(diana, andrew).
+sisterInLaw(diana, edward).
+sisterInLaw(anne, diana).
+sisterInLaw(anne, sarah).
+sisterInLaw(margaret, philip).
+brotherInLaw(philip, margaret).
+brotherInLaw(mark, charles).
+brotherInLaw(charles, sarah).
+brotherInLaw(edward, sarah).
+brotherInLaw(andrew, diana).
+brotherInLaw(edward, diana).
+brotherInLaw(charles, mark).
+brotherInLaw(andrew, mark).
+brotherInLaw(edward, mark).
+brotherInLaw(mark, andrew).
+brotherInLaw(mark, edward).
