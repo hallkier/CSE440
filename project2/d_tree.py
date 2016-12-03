@@ -9,11 +9,10 @@ def DT(filename):
 
            if data_bool == true:
                num_inst = num_inst + 1
+       print ("Number of instances: ", num_inst)
 
-        print ("Number of instances: ", num_inst)
 
-
-DT(set1.data)
+DT("set1.data")
 
 
 
