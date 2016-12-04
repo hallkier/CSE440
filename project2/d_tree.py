@@ -1,16 +1,19 @@
 def DT(filename):
-
+   num_inst = 0
+   data_bool = False
    with open(filename, 'r') as f:
-       num_inst = 0
-       data_bool = False
-       for line in f:
-           if line == ("@data"):
-                data_bool = True
+      for line in f:
 
-           if data_bool == True:
-               num_inst = num_inst + 1
-       print ("Number of instances: ", num_inst)
+         #Count number of instances
+         if data_bool == True:
+            num_inst = num_inst + 1
+         if line[0:5] == "@data":
+            data_bool = True
 
+      print("Number of instances: ", num_inst)
+
+
+#input_file = input("Please enter file name: ")
 
 DT("set1.data")
 
