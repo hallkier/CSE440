@@ -37,16 +37,35 @@ def DT(filename):
             attr_dict[output_cat] = type_list
 
      #print(attr_dict)
-      print(attr_list)
-      print(data_list)
-     #print("Number of instances: ", num_inst)
+     #print(attr_list)
+     #print(data_list)
+   print("Number of instances: ", num_inst)
      # print("Number of attributes: ", num_attr)
      # print("Output Catagory and index: ", output_cat, output_index)
+   
+   #FIND ATTRIBUTE NODE
+
+   for attr in range(0, num_attr - 1):
+      curr_attr = attr_list[attr]
+      attr_types = attr_dict[curr_attr]
+      for type in attr_types:
+         true_count = 0
+         false_count = 0
+         for i in range(0, num_inst):
+            if type in data_list[i]:
+               if data_list[i][output_index] == "T":
+                  true_count = true_count + 1
+               else:
+                  false_count = false_count + 1
+         print("type: ", type, "true: ", true_count, "false: ", false_count)
+
+ 
      
 
 #input_file = input("Please enter file name: ")
 
 DT("set1.data")
+#DT(input_file)
 
 
 
