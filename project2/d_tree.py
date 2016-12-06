@@ -37,24 +37,22 @@ def DT(filename):
                types = types.strip('{ , }')
                type_list.append(types)
             attr_dict[output_cat] = type_list
-
-     #print(attr_dict)
-     #print(data_list)
-   print("Number of instances: ", num_inst)
-     # print("Number of attributes: ", num_attr)
-     # print("Output Catagory and index: ", output_cat, output_index)
+   pretty_inst = 'Number of instances: {}'.format(num_inst)
+   print(pretty_inst)
    
    #FIND ATTRIBUTE NODE
-   attr_node = ""
+   root_node = ""
    gain = 0
+   bool_dict = {}
    for attr in range(0, num_attr - 1):
       total_overall = 0
       remainder = 0
       calculations_dict = {}
       curr_attr = attr_list[attr]
       attr_types = attr_dict[curr_attr]
-      print(curr_attr)
+     #print(curr_attr)
       for type in attr_types:
+         bool_list = []
          true_count = 0.0
          false_count = 0.0
          for i in range(0, num_inst): #iterate through data
@@ -65,7 +63,10 @@ def DT(filename):
                else:
                   false_count = false_count + 1
                   total_overall = total_overall + 1
-         print("type: ", type, "true: ", true_count, "false: ", false_count)
+         bool_list.append(true_count)
+         bool_list.append(false_count)
+         bool_dict[type] = bool_list
+        #print("type: ", type, "true: ", true_count, "false: ", false_count)
          if (true_count > 0 and false_count > 0):
             calc_list = []
             true_num = true_count
@@ -89,10 +90,24 @@ def DT(filename):
       new_gain = 1 - remainder
       if (new_gain > gain):
          gain = new_gain
-         attr_node = curr_attr
-      print("Current Attribute: ", curr_attr, "Gain: ", new_gain) 
-   
-   print("Root Node Determined: ", attr_node)          
+         root_node = curr_attr
+      pretty_gain = 'Attribute: {} Gain: {}'.format(curr_attr, new_gain)
+      print(pretty_gain)
+   pretty_root = '{} {}'.format('Root Node: ', root_node)
+   print(pretty_root)
+   node_types = attr_dict[root_node]
+   for type in node_types:
+     true_v = bool_dict[type][0]
+     false_v = bool_dict[type][1]
+     if (true_v == 0):
+        pretty_leaf = 'Leaf {}: F ({})'.format(type, false_v)
+        print(pretty_leaf)
+     elif (false_v == 0):
+        pretty_leaf = 'Leaf {}: T ({})'.format(type, true_v)
+        print(pretty_leaf)   
+      
+  #print(bool_dict)
+   attr_list.remove(root_node)
 #data_entropy += (-freq/len(data))*math.log(freq/len(data),2)
 #example of using log
  
@@ -110,6 +125,6 @@ print("gain: ", gain)
 '''
 #input_file = input("Please enter file name: ")
 
-DT("set1.data")
+DT("set3.data")
 #DT(input_file)
 
