@@ -39,14 +39,14 @@ def DT(filename):
             attr_dict[output_cat] = type_list
 
      #print(attr_dict)
-   print(attr_list)
      #print(data_list)
    print("Number of instances: ", num_inst)
      # print("Number of attributes: ", num_attr)
      # print("Output Catagory and index: ", output_cat, output_index)
    
    #FIND ATTRIBUTE NODE
-
+   attr_node = ""
+   gain = 0
    for attr in range(0, num_attr - 1):
       total_overall = 0
       remainder = 0
@@ -54,11 +54,10 @@ def DT(filename):
       curr_attr = attr_list[attr]
       attr_types = attr_dict[curr_attr]
       print(curr_attr)
-      print("type total: ", type_total)
       for type in attr_types:
          true_count = 0.0
          false_count = 0.0
-         for i in range(0, num_inst):
+         for i in range(0, num_inst): #iterate through data
             if type in data_list[i]:
                if data_list[i][output_index] == "T":
                   true_count = true_count + 1
@@ -68,13 +67,32 @@ def DT(filename):
                   total_overall = total_overall + 1
          print("type: ", type, "true: ", true_count, "false: ", false_count)
          if (true_count > 0 and false_count > 0):
+            calc_list = []
             true_num = true_count
             false_num = false_count
             log_denom = (true_count + false_count)
             true_log = (-true_num/log_denom) * math.log(true_num/log_denom,2)
             false_log = (-false_num/log_denom) * math.log(false_num/log_denom,2)
             log_calc = (true_log + false_log)
-            
+            calc_list.append(log_calc)
+            calc_list.append(log_denom)
+            calculations_dict[type] = calc_list
+ 
+      #finish calculations
+      for type in attr_types:
+         if type in calculations_dict:
+            val_list = calculations_dict[type]
+            log_val = val_list[0]
+            total_val = val_list[1]
+            outer_frac = (total_val/total_overall)
+            remainder += (outer_frac * log_val)
+      new_gain = 1 - remainder
+      if (new_gain > gain):
+         gain = new_gain
+         attr_node = curr_attr
+      print("Current Attribute: ", curr_attr, "Gain: ", new_gain) 
+   
+   print("Root Node Determined: ", attr_node)          
 #data_entropy += (-freq/len(data))*math.log(freq/len(data),2)
 #example of using log
  
